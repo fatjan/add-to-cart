@@ -15,5 +15,8 @@ const addButtonEl = document.getElementById("add-button");
 addButtonEl.addEventListener("click", () => {
     let inputValue = inputFieldEl.value;
     push(shoppingListInDB, inputValue);
-    console.log(inputValue, "added to database");
+    const ul = document.getElementById("shopping-list");
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(inputValue));
+    ul.appendChild(li);
 });
